@@ -195,9 +195,8 @@
           <div class="column has-text-centered">
             <!-- TODO: Replace with your paper title -->
              <!-- <img src="static/images/SoulX-LiveAct.png" alt="SoulX-LiveAct"/> -->
-            <h1 class="title is-1 publication-title">SoulX-LiveAct:Towards Hour-Scale Real-Time Human Animation with Neighbor Forcing and ConvKV Memory</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
+            <h1 class="title is-1 publication-title">LiveAct:Towards Hour-Scale Real-Time Human Animation with Neighbor Forcing and ConvKV Memory</h1>
+            <!-- <div class="is-size-5 publication-authors">
               <span class="author-block">
                 <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Dingcheng Zhen</a><sup>*</sup>,</span>
                 <span class="author-block">
@@ -208,14 +207,12 @@
                       <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Zhiqi Jiang</a><sup>*</sup>,</span>
                     <span class="author-block">
                       <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Shunshun Yin</a></span>
-                  </div>
+                  </div> 
 
                   <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
                     <span class="author-block">Soul AI Lab</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
                     <span class="eql-cntrb"><small><br><sup>*</sup>Core Contribution</small></span>
-                  </div>
+                  </div> -->
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
@@ -271,29 +268,35 @@
 </section>
 
 
-<!-- Method overall-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="method_overall">
-      <!-- TODO: Replace with your teaser video -->
-      <img src="static/images/method_overall.png" alt="Method Overall" loading="lazy"/>
-    </div>
-    <h2>
-      Overall training pipeline of SoulX-LiveAct. Left: The architecture of DiT block. Right: The training pipeline consists of two stages: (i) training with step-aligned noisy references and a diffusion loss computed at the same step, and (ii) joint training of ConvKV memory and step distill.
-    </h2>
-  </div>
-</section>
+<!------- 内容部分 ---------->
 
-<!-- Paper abstract -->
-<section class="section hero is-light">
+<section class="section" style="
+  --text-size: 1.0rem;     /*  控制 Block 内文字大小 */
+  --img-width: 100%;        /*  控制 Block 内图片宽度 */
+  --text-color: #2c3e50; /*  控制 Block 内文字颜色(注释掉颜色会变淡) */
+  --line-height: 1.4;      /*  控制 Block 内文字行间距 */
+  --video-width: 600px;     /*  控制 Block 内视频宽度 */
+">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
+    
+    <!-- 标题 is-1 ~ is-5 从大到小 -->
+    <h2 class="title is-2 has-text-centered">标题</h2>
+
+    <div class="columns is-multiline is-centered">
+      
+      <div class="column is-full has-text-centered">
+        <img src="static/images/method_overall.png" 
+             alt="Description" 
+             style="width: var(--img-width); height: auto; border-radius: 8px;">
+      </div>
+
+      <div class="column is-full">
+        <div class="content has-text-justified" 
+        style="font-size: var(--text-size); 
+        line-height: var(--line-height); 
+        color: var(--text-color);">
           <p>
-            Autoregressive (AR) diffusion models offer a promising framework for sequential generation such as video synthesis by combining diffusion modeling with causal inference. Although they support streaming generation, existing AR diffusion methods struggle to scale efficiently.
+            文本内容:Autoregressive (AR) diffusion models offer a promising framework for sequential generation such as video synthesis by combining diffusion modeling with causal inference. Although they support streaming generation, existing AR diffusion methods struggle to scale efficiently.
             In this paper, we identify two key challenges in hour-scale real-time human animation. First, most forcing strategies propagate sample-level representations with mismatched diffusion states, causing inconsistent learning signals and unstable convergence. Second, historical representations grow unbounded and lack structure, preventing effective reuse of cached states and severely limiting inference efficiency.
             To address these challenges, we propose Neighbor Forcing, a diffusion-step-consistent AR formulation that propagates temporally adjacent frames as latent neighbors under the same noise condition. This design provides a distribution-aligned and stable learning signal while preserving drifting throughout the AR chain. 
             Building upon this, we introduce a structured ConvKV memory mechanism that compresses the keys and values in causal attention into a fixed-length representation, enabling constant-memory inference and truly infinite video generation without relying on short-term motion-frame memory.
@@ -302,102 +305,54 @@
           </p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
 
-
-
-<div id="results-carousel" class="columns results-carousel">
-  <div class="column">
-    <video id="teaser1" autoplay controls muted loop playsinline height="100%">
-      <source src="./static/videos/teaser1.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="column">
-    <video id="teaser2" autoplay controls muted loop playsinline height="100%">
-      <source src="./static/videos/teaser2.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="column">
-    <video id="teaser3" autoplay controls muted loop playsinline height="100%">
-      <source src="./static/videos/teaser3.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="column">
-    <video id="teaser4" autoplay controls muted loop playsinline height="100%">
-      <source src="./static/videos/teaser4.mp4" type="video/mp4">
-    </video>
-  </div>
-</div>
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
+      <!-- 视频部分 -->
+      <div class="column is-full">
+        <div id="carousel-unique-id-1" 
+             class="carousel results-carousel" 
+             data-slides-to-show="2"
+             style="max-width: 100%; margin: 0 auto;">
+             
+             <div class="item"> 
+              <video autoplay controls muted loop playsinline loading="lazy"
+                   style="width: 100%;  border-radius: 8px;">
+              <source src="static/videos/carousel1.mp4" type="video/mp4">
+            </video>
+          </div>
+      
+          <div class="item">
+            <video autoplay controls muted loop playsinline loading="lazy"
+                   style="width: 100%; border-radius: 8px;">
+              <source src="static/videos/carousel2.mp4" type="video/mp4">
+            </video>
+          </div>
+          
+          <div class="item">
+            <video autoplay controls muted loop playsinline loading="lazy"
+                   style="width: 100%; border-radius: 8px;">
+              <source src="static/videos/carousel3.mp4" type="video/mp4">
+            </video>
+          </div>
+      
         </div>
       </div>
+
     </div>
   </div>
 </section>
-<!-- End video carousel -->
 
 
 
 
 
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
-}</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
 
 
+<!------- 模板开源协议 --------->
   <footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
-
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
             You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
@@ -419,14 +374,3 @@
   </body>
   </html>
 
-  <style>
-    /* 自定义摘要紧凑样式 */
-    .has-text-justified {
-      line-height: 1.4; /* 行间距：默认 1.6 → 1.4，更紧凑（可微调 1.3-1.5） */
-      font-size: 1rem; /* 字体大小：轻微缩小，进一步紧凑（可选） */
-      margin-top: 0.8rem; /* 标题与正文间距：默认 1rem → 0.8rem */
-      p {
-        margin-bottom: 0 !important; /* 移除段落底部默认间距（Bulma 自带） */
-      }
-    }
-  </style>
